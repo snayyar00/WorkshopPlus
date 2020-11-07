@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/logoPlaceholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -16,71 +17,82 @@
         android:text="workshop+"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/toggleUserType" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/emailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="328dp"
+        android:bufferType="normal"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="password"
+        android:freezesText="false"
+        android:gravity="center_horizontal"
+        android:inputType="textEmailAddress"
+        android:saveEnabled="false"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:selectAllOnFocus="true"
+        android:hint="email"
+        android:textAllCaps="false"
+        android:textIsSelectable="true"
+        android:textStyle="italic"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPassword"
+        android:hint="password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailText" />
+
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="New User"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="436dp"
-        android:onClick="disable"
+        android:onClick="handleInput"
         android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="436dp"
-        android:onClick="disable"
-        android:text="Register"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="316dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="email/username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="391dp"
+        android:id="@+id/toggleUserType"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Student" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Educator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Educator" />
@@ -88,17 +100,23 @@
     </com.google.android.material.tabs.TabLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
+        android:id="@+id/toggleLanguage"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/English"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="English" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Francais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Francais" />
