@@ -112,7 +112,7 @@ public class Register_TA extends AppCompatActivity {
                         user.put("phone",phone);
                         
                         //check if our user is a TA or student:
-                        user.put("TA?","1")
+                        user.put("Student?","1")
                         
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
