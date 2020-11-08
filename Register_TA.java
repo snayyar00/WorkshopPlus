@@ -110,6 +110,10 @@ public class Register_TA extends AppCompatActivity {
                         user.put("fName",fullName);
                         user.put("email",email);
                         user.put("phone",phone);
+                        
+                        //check if our user is a TA or student:
+                        user.put("TA?","1")
+                        
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
