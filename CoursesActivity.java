@@ -28,9 +28,13 @@ public class CoursesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
+        
+        // Getting subject from previous activity
         Intent i = getIntent();
         String subject = i.getStringExtra("Subject");
         ((TextView)findViewById(R.id.subject)).setText(subject);
+        
+        // Spinner for courses
         Spinner spin = (Spinner) findViewById(R.id.courseSpinner);
         String[] courses = new String[4];
         courses = CMPT_COURSES;
@@ -38,17 +42,24 @@ public class CoursesActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
     }
-
+    
+    // Submits selected course to Assignments activity
     public void selectCourse(View v){
+        
         Spinner course = (Spinner)findViewById(R.id.courseSpinner);
         String courseID = course.getSelectedItem().toString();
         Log.d("CourseID", courseID);
+        
+        // Selection alerts
         Toast.makeText(this, "Selected subject: ", Toast.LENGTH_LONG).show();
         Toast.makeText(this, courseID, Toast.LENGTH_LONG).show();
+        
+        // Passing course to next activity
         Intent i = new Intent(this, AssignmentsActivity.class);
         i.putExtra("Course", courseID);
         startActivity(i);
     }
+    
     public void goToSettings(View v){
         Intent i = new Intent(this,SettingsActivity.class);
         startActivity(i);
