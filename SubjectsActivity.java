@@ -1,8 +1,8 @@
 package com.example;
 /**
- * Login page for Workshop+
- * Functionality: Toggle between Student/Educator accounts, toggle language.
- * Takes user input for email/password and proceeds to Subjects page.
+ * Subjects page for Workshop+
+ * Displays subjects in a drop down menu.
+ * User selects subject and presses Next to proceed to the relevant Courses page.
  */
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,39 +11,38 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
-
+public class SubjectsActivity extends AppCompatActivity {
+    // Placeholder for subject selection spinner
+    String[] subjects = { "MATH", "CMPT", "MACM", "STAT"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_subjects);
+        Spinner spin = (Spinner) findViewById(R.id.subjectSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
     }
 
-    public void loginAttempt(View v){
-
-        // Retrieving input from email textbox
-        TextView username = findViewById(R.id.emailText);
-        String user = username.getText().toString();
-        Log.d("Username", user);
-
-        // Retrieving input from password textbox
-        TextView password = findViewById(R.id.passwordText);
-        String pass = password.getText().toString();
-                Log.d("Password", pass);
-        Toast.makeText(this, "Logging in", Toast.LENGTH_LONG).show();
-        // Todo: Retrieve account type from toggle menu
-        // Todo: Verify username and password
-        // Alert for incorrect login info
-        // Go to next screen for correct login information
-
-        Intent i = new Intent(this, SubjectsActivity.class);
+    // Selects subject in spinner and goes to next activity, passing subject selected
+    public void selectSubject(View v){
+        Spinner subject = (Spinner)findViewById(R.id.subjectSpinner);
+        String subj = subject.getSelectedItem().toString();
+        Log.d("Subject", subj);
+        Toast.makeText(this, "Selected subject: ", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, subj, Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, CoursesActivity.class);
+        i.putExtra("Subject", subj);
         startActivity(i);
-
     }
 
-    // Alert for incorrect login
-
+    public void goToSettings(View v){
+        Intent i = new Intent(this,SettingsActivity.class);
+        startActivity(i);
+    }
 }
