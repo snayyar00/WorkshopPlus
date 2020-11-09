@@ -90,8 +90,8 @@ public class Register_TA extends AppCompatActivity {
 
                         // send verification link
 
-                        FirebaseUser fuser = fAuth.getCurrentUser();
-                        fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        FirebaseUser fUser = fAuth.getCurrentUser();
+                        fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(Register_TA.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
@@ -110,12 +110,12 @@ public class Register_TA extends AppCompatActivity {
                         user.put("fName",fullName);
                         user.put("email",email);
                         user.put("phone",phone);
-                        
-                        //check if our user is a TA or student:
-                        user.put("student","1");
-                        
 
-                        
+                        //check if our user is a TA or student:
+                        user.put("Student?","1");
+
+
+
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {

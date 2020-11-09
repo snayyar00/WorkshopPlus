@@ -21,6 +21,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login_TA extends AppCompatActivity {
     EditText mEmail,mPassword;
@@ -28,6 +32,9 @@ public class Login_TA extends AppCompatActivity {
     TextView mCreateBtn,forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
+
 
 
     @Override
@@ -42,6 +49,8 @@ public class Login_TA extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         forgotTextLink = findViewById(R.id.forgotPassword);
+        fStore = FirebaseFirestore.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,14 +77,42 @@ public class Login_TA extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                // authenticate the user
+
 
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
+
+
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login_TA.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            FirebaseUser fUser = fAuth.getCurrentUser();
+                            userID = fAuth.getCurrentUser().getUid();
+
+
+if(userID != null){
+    DocumentReference docref = db.collection("users").document(userID);
+    docref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        @Override
+        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    String student = document.getString("Student?");
+                    Toast.makeText(Login_TA.this, student, Toast.LENGTH_SHORT).show();
+                    if(student == "1"){
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    }else {
+                        startActivity(new Intent(getApplicationContext(),SubjectsActivity.class));
+                    }
+
+                }
+            }
+        }
+    });
+
+}
+
+
                         }else {
                             Toast.makeText(Login_TA.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
