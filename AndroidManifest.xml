@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Workshop">
-        <activity android:name=".VideoSelectActivity"></activity>
+        <activity android:name=".VideoSelectActivity"
+            android:parentActivityName=".AssignmentsActivity"></activity>
         <activity
             android:name=".AssignmentsActivity"
             android:parentActivityName=".CoursesActivity" />
