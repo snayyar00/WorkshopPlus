@@ -23,6 +23,8 @@ public class SubjectsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects);
+        
+        // Spinner for subject selectin
         Spinner spin = (Spinner) findViewById(R.id.subjectSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -33,14 +35,21 @@ public class SubjectsActivity extends AppCompatActivity {
     public void selectSubject(View v){
         Spinner subject = (Spinner)findViewById(R.id.subjectSpinner);
         String subj = subject.getSelectedItem().toString();
+        
+        // Log submission of subject passed
         Log.d("Subject", subj);
+        
+        // User alert of selection
         Toast.makeText(this, "Selected subject: ", Toast.LENGTH_LONG).show();
         Toast.makeText(this, subj, Toast.LENGTH_LONG).show();
+        
+        // Passing subject to Courses activity
         Intent i = new Intent(this, CoursesActivity.class);
         i.putExtra("Subject", subj);
         startActivity(i);
     }
 
+    // Settings navigation
     public void goToSettings(View v){
         Intent i = new Intent(this,SettingsActivity.class);
         startActivity(i);
