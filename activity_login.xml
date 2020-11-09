@@ -1,44 +1,130 @@
-package com.example;
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
-import androidx.appcompat.app.AppCompatActivity;
+    <TextView
+        android:id="@+id/logoPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="200dp"
+        android:text="Workshop+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleUserType" />
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:text="New User"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-public class LoginActivity extends AppCompatActivity {
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-    }
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="loginAttempt"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
-    public void loginAttempt(View v){
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="376dp"
+        android:bufferType="normal"
+        android:ems="10"
+        android:freezesText="false"
+        android:gravity="center_horizontal"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:saveEnabled="false"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:selectAllOnFocus="true"
+        android:textAllCaps="false"
+        android:textIsSelectable="true"
+        android:textStyle="italic"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        // Retrieving input from email textbox
-        TextView username = findViewById(R.id.emailText);
-        String user = username.getText().toString();
-        Log.d("Username", user);
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/toggleUserType"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        // Retrieving input from password textbox
-        TextView password = findViewById(R.id.passwordText);
-        String pass = password.getText().toString();
-                Log.d("Password", pass);
-        Toast.makeText(this, "Logging in", Toast.LENGTH_LONG).show();
-        // Todo: Retrieve account type from toggle menu
-        // Todo: Verify username and password
-        // Alert for incorrect login info
-        // Go to next screen for correct login information
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student" />
 
-        Intent i = new Intent(this, SubjectsActivity.class);
-        startActivity(i);
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Educator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Educator" />
 
-    }
+    </com.google.android.material.tabs.TabLayout>
 
-    // Alert for incorrect login
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/languageToggle"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-}
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Francais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Francais" />
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
