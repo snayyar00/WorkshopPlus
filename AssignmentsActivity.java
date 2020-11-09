@@ -12,19 +12,26 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AssignmentsActivity extends AppCompatActivity {
+    // Placeholder for assignments
     String[] assignments = { "Assignment 1", "Assignment 2", "Code an Android app in 1 week"};
     @Override
+    
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assignments);
+        // Getting course from previous menu
         Intent i = getIntent();
         String course = i.getStringExtra("Course");
         ((TextView)findViewById(R.id.course)).setText(course);
+        
+        // Spinner for assigments
         Spinner spin = (Spinner) findViewById(R.id.assnSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, assignments);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
     }
+    
+    // Submits selected assignment in spinner to video selection page
     public void selectAssignment(View v){
         Spinner course = (Spinner)findViewById(R.id.assnSpinner);
         String assnID = course.getSelectedItem().toString();
@@ -35,6 +42,8 @@ public class AssignmentsActivity extends AppCompatActivity {
         i.putExtra("Assignment", assnID);
         startActivity(i);
     }
+    
+    // Transition to Settings page
     public void goToSettings(View v){
         Intent i = new Intent(this,SettingsActivity.class);
         startActivity(i);
