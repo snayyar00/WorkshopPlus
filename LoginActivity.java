@@ -38,10 +38,17 @@ public class LoginActivity extends AppCompatActivity {
         // Todo: Verify username and password
         // Alert for incorrect login info
         // Go to next screen for correct login information
-
+        String student = findViewById(R.id.student)
+        if(student == "1")
+        {
+            Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        }
+        else
+        {
         Intent i = new Intent(this, SubjectsActivity.class);
         startActivity(i);
-
+        }
     }
 
     // Alert for incorrect login
