@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Workshop+</string>
+    <string name="retry">Réessayez</string>
+    <string name="todo">TODO</string>
+
+    <string name="my_string_name">Bienvenue!</string>
+    <string name="assignment_header">Devoirs</string>
+    <string name="assignment_select">Choisir ses devoirs</string>
+    <string name="choose_next">Prochain</string>
+    <string name="choose_videos">Vidéos</string>
+    <string name="assn_options">Options de devoirs</string>
+    <string name="choose_live">Session en direct</string>
+
+    <string name="add_assn">Nouveaux devoirs</string>
+    <string name="course_header">Numéro de Les Matières</string>
+
+    <string name="choose_course">Sélectionnez un matériau</string>
+    <string name="choose_login">Connectez-vous</string>
+    <string name="choose_forgot_pass">Mot de passe oublié?</string>
+    <string name="choose_new_acc">Créer un nouveau compte</string>
+
+    <string name="live_header">Session en direct</string>
+    <string name="live_room_header">Entrez un numéro pour rejoindre la session en direct</string>
+    <string name="room_number">Numéro de Session</string>
+    <string name="choose_join">Joindre</string>
+    <string name="new_assn_header">Créer un nouveaux devoirs</string>
+    <string name="assn_name_header">Nom des devoirs</string>
+
+    <string name="choose_create_ass">Créer</string>
+    <string name="reg_header">Créer un Nouveau Compte</string>
+    <string name="full_name">Les nom et prénom</string>
+    <string name="phone_num">Téléphone</string>
+    <string name="choose_reg">Registre</string>
+
+    <string name="choose_already_reg">Déjà enregistré? Connectez-vous</string>
+    <string name="settings_header">Réglages</string>
+    <string name="select_avail">Sélectionnez un disponibilité:</string>
+    <string name="offline">hors-ligne</string>
+    <string name="busy">occupé</string>
+    <string name="available">disponible</string>
+
+    <string name="splash_connection">Vérification de La Connexion...</string>
+
+    <string name="subj_header">Les Matières</string>
+    <string name="select_subj">Sélectionnez:</string>
+
+    <string name="upload_vid">Télécharger la Vidéo</string>
+    <string name="choose_a_vid">Choisissez une Vidéo</string>
+    <string name="add_desc">Rédiger une description</string>
+
+    <string name="email_req">Le email est requis</string>
+    <string name="pass_req">Mot de passe requis</string>
+    <string name="pass_short">Le mot de passe doit être au moins de 6 caractères</string>
+    <string name="login_succ">La connexion a réussi!</string>
+
+    <string name="hello_ta">Bienvenue professeur!</string>
+    <string name="hello_student">Bienvenue étudiant!</string>
+    <string name="reset_pass">Réinitialiser le mot de passe?</string>
+    <string name="reset_enterEmail">Entrez votre email pour recevoir le lien de réinitialisation</string>
+
+    <string name="show_yes">Oui</string>
+    <string name="show_no">Non</string>
+
+    <string name="reset_sent">Le lien de réinitialisation a été envoyé à votre adresse e-mail</string>
+    <string name="reset_error">"Erreur: le lien de réinitialisation n'a pas été envoyé"</string>
+
+    <string name="assn_selected">Les devoirs choisis:</string>
+    <string name="assn_created">Les devoirs ont été créés avec succès</string>
+
+    <string name="show_error">Erreur!</string>
+    <string name="entering_live">Entrer dans la salle virtuelle, veuillez patienter...</string>
+
+    <string name="selected_subj">Sujet sélectionné: </string>
+    <string name="verify_sent">Un e-mail de vérification a été envoyé.</string>
+    <string name="user_succ">Le compte a été créé</string>
+    <string name="no_connection">Pas de connexion </string>
+
+    <string name="upload_success">La vidéo a été téléchargée</string>
+    <string name="upload_fail">Le téléchargement a échoué</string>
+    <string name="emptyField_err">Tous les champs sont obligatoires pour continuer</string>
+
+    <string name="live_note">Démarrer une session en direct avec un étudiant</string>
+    <string name="live_note_student">Join a live session by entering the provided code by your TA on the next page</string>
+
+</resources>

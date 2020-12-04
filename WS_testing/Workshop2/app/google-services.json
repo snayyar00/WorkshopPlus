@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "296191996230",
+    "firebase_url": "https://workshopplus-1079f.firebaseio.com",
+    "project_id": "workshopplus-1079f",
+    "storage_bucket": "workshopplus-1079f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296191996230:android:900b4272c65b4cd03e3547",
+        "android_client_info": {
+          "package_name": "Workshop.Plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296191996230-02d073fq689mgcaanj27p220ckia7ti4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc2jhZd3uoxo2N99eDjwBcm8L3nrqp2V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296191996230-02d073fq689mgcaanj27p220ckia7ti4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296191996230:android:4f7391efe54860ee3e3547",
+        "android_client_info": {
+          "package_name": "com.example.workshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296191996230-02d073fq689mgcaanj27p220ckia7ti4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc2jhZd3uoxo2N99eDjwBcm8L3nrqp2V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296191996230-02d073fq689mgcaanj27p220ckia7ti4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.workshop">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".GlobalClass"
+        android:theme="@style/Theme.Workshop">
+        <activity android:name=".AssignmentTAActivity"></activity>
+        <activity android:name=".VideoSelectActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".CourseActivity" />
+        <activity android:name=".VideoFetch" />
+        <activity android:name=".VideoUpload" />
+        <activity android:name=".AssignmentActivity" />
+        <activity android:name=".SubjectsActivity" />
+        <activity android:name=".NameAssignment"
+            android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Register_TA" />
+        <activity android:name=".Login_TA" />
+    </application>
+
+</manifest>

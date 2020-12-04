@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Workshop+</string>
+    <string name="retry">Retry</string>
+    <string name="todo">TODO</string>
+    <string name="my_string_name">Welcome!</string>
+
+    <string name="assignment_header">Assignments</string>
+    <string name="assignment_select">Select Assignment</string>
+    <string name="choose_next">Next</string>
+    <string name="choose_videos">Videos</string>
+    <string name="assn_options">Assignment Options</string>
+    <string name="choose_live">Go Live</string>
+    <string name="add_assn">Add Assignment</string>
+
+    <string name="course_header">Courses</string>
+    <string name="choose_course">Select Course</string>
+
+    <string name="choose_login">Login</string>
+    <string name="choose_forgot_pass">Forgot Password?</string>
+    <string name="choose_new_acc">New Here? Create Account</string>
+
+    <string name="live_header">Live Session</string>
+    <string name="live_room_header">Enter a room number to join a live session</string>
+    <string name="room_number">Room Number</string>
+    <string name="choose_join">Join</string>
+    <string name="new_assn_header">Create an Assignment</string>
+    <string name="assn_name_header">Assignment Name</string>
+    <string name="choose_create_ass">Create</string>
+
+    <string name="reg_header">Create a New Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_num">Phone</string>
+    <string name="choose_reg">Register</string>
+    <string name="choose_already_reg">Already Registered? Login Here</string>
+
+    <string name="settings_header">Settings</string>
+    <string name="select_avail">Select Availability:</string>
+    <string name="offline">Offline</string>
+    <string name="busy">Busy</string>
+    <string name="available">Available</string>
+
+    <string name="splash_connection">Checking Connection...</string>
+
+    <string name="subj_header">Subjects</string>
+    <string name="select_subj">Select Subject</string>
+
+
+    <string name="upload_vid">Upload Video</string>
+    <string name="choose_a_vid">Choose Video</string>
+    <string name="add_desc">Add a description</string>
+
+    <string name="email_req">Email is required</string>
+    <string name="pass_req">Password is required</string>
+    <string name="pass_short">Password must be at least 6 characters</string>
+    <string name="login_succ">Log in successful!</string>
+
+    <string name="hello_ta">Welcome, TA</string>
+    <string name="hello_student">Welcome, Student</string>
+    <string name="reset_pass">Reset Password?</string>
+    <string name="reset_enterEmail">Enter your email to receive reset link</string>
+
+    <string name="show_yes">Yes</string>
+    <string name="show_no">No</string>
+
+    <string name="reset_sent">Reset link has been sent to your email</string>
+    <string name="reset_error">Error: Reset link was not sent</string>
+
+    <string name="assn_selected">Selected assignment: </string>
+    <string name="assn_created">Assignment successfully created</string>
+
+    <string name="show_error">Error!</string>
+    <string name="entering_live">Entering virtual room, please wait...</string>
+
+    <string name="selected_subj">Selected subject: </string>
+    <string name="verify_sent">Verification email has been sent</string>
+    <string name="user_succ">User created</string>
+    <string name="no_connection">No connection</string>
+
+    <string name="upload_success">Video uploaded</string>
+    <string name="upload_fail">Upload failed</string>
+    <string name="emptyField_err">All fields are required to proceed</string>
+
+    <string name="live_note">Start a live session with a student</string>
+    <string name="live_note_student">Join a live session by entering the provided code by your TA on the next page</string>
+
+
+</resources>
+
