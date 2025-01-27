@@ -1,7 +1,6 @@
-Workshop+
+## Workshop+ YouTube Demo:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-0tDFDp1dOY/0.jpg)](https://www.youtube.com/watch?v=-0tDFDp1dOY)
-https://www.youtube.com/watch?v=-0tDFDp1dOY
 
 In this application, students will have student accounts, and teaching assistants will have TA accounts. As a student, you type in your “workshop code” provided by your instructor in order to access a virtual workshop (algebra workshop, statistics workshop, etc). In the virtual workshop, you are able to select the specific course you are hoping to find help in (eg. MACM101, STAT 270, etc). Upon searching for a course, you are able to choose an assignment from that course of which other students are currently/were previously working on. 
 
